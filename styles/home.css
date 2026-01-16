@@ -1,0 +1,13 @@
+#weather_data
+{
+    width:25%;
+    /* height:5%; */
+    margin-left:75%;
+    /* display:block; */
+    text-align: center;
+    background-color: lightcyan;
+}
+#weather_data p
+{
+    text-align: left;
+}
