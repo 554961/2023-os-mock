@@ -6,6 +6,12 @@
 
 <!-- my custom css -->
  <link rel="stylesheet" href="/2023-os-mock/styles/navbar.css">
+ <style>
+  body
+  {
+    background: linear-gradient(135deg, #eafff1, #d7f7e5);
+  }
+ </style>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">

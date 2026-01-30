@@ -7,7 +7,8 @@ $sql = "CREATE TABLE Customer (
     customerPassword varchar(255),
     customerFirstName varchar(255),
     customerLastName varchar(255),
-    accountCreationDate DATE            -- use CURRENT_DATE();
+    customerAge INT,
+    accountCreationDate DATE DEFAULT CURRENT_DATE()
 )";
 
 if (mysqli_query($conn, $sql)) {echo "Succesfully created customer table";}
