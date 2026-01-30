@@ -46,17 +46,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     // successful register
     else
     {
-      echo "Success!";
+      echo "Account Created Successfully!";
 
       // hash password
       $password = password_hash($password, PASSWORD_DEFAULT);
      
-      $sql = "INSERT INTO customer ('customerEmail', 'customerPassword', customerFirstName', 'customerLastName',
-                                    'customerAge')
-              VALUES (?,?,?,?,?,?)";
+      $sql = "INSERT INTO customer (`customerEmail`, `customerPassword`, `customerFirstName`, `customerLastName`,
+                                    `customerAge`)
+              VALUES (?,?,?,?,?)";
 
       // prepared statement to insert
-      $stmt = mysqli_prepare($link, $sql);
+      $stmt = mysqli_prepare($conn, $sql);
       mysqli_stmt_bind_param($stmt, "ssssi", $email, $password, $fname, $lname, $age);
       mysqli_stmt_execute($stmt);
     
