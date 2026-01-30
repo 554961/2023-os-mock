@@ -1,17 +1,20 @@
 <?php
 require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
+// this will store all errors that user might encounter
+$allErrors = [];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
   //use CURRENT_DATE();
-  $fname = htmlspecialchars($_POST["fname"]);
-  $lname = htmlspecialchars($_POST["lname"]);
-  $email = htmlspecialchars($_POST["email"]);
-  $password = htmlspecialchars($_POST["password"]);
-  $age = htmlspecialchars($_POST["age"]);
+  $fname = mysqli_real_escape_string($conn, $_POST["fname"]);
+  $lname = mysqli_real_escape_string($conn, $_POST["lname"]);
+  $email = mysqli_real_escape_string($conn, $_POST["email"]);
+  $password = mysqli_real_escape_string($conn, $_POST["password"]);
+  $age = mysqli_real_escape_string($conn, $_POST["age"]);
 
-  // this will store all errors that user might encounter
-  $allErrors = [];
+  // store the state of register success
+  $successful = false;
 
   // validating information
   // notes for reader: 
@@ -46,7 +49,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     // successful register
     else
     {
-      echo "Account Created Successfully!";
+      // echo "Account Created Successfully!";
+      $successful = true;
+     ?> 
+
+      <!-- JS to show status, instead of it being on the top left -->
+      <script>
+        document.getElementById("status").textContent = "Done!";
+      </script>
+
+      <?php 
 
       // hash password
       $password = password_hash($password, PASSWORD_DEFAULT);
@@ -146,6 +158,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
               Already have an account? <a href="../login" class="text-success fw-semibold text-decoration-none">Login</a>
           </p>
           </form>
+
+          <p id="status" class='alert alert-success'></p>
+          
+          
+          <?php 
+          if (isset($successful) && $successful) 
+          {
+            ?>
+          <script>
+              document.getElementById("status").textContent = "Successfully Registered!";
+          </script> 
+          <?php 
+          } 
+          
+          if (isset($allErrors) && count($allErrors) > 0)
+            echo "<p class='alert alert-danger'>ERRORS:<br><br>";
+            {
+              foreach ($allErrors as $error)
+                {
+                  echo $error . "<br>";
+                }
+            }
+            echo "</p>";
+
+          ?>
+
         </div>
     </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
