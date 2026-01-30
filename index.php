@@ -20,17 +20,17 @@
     
     
     
-    <div id="weather_data" class="alert alert-info">
+    <div id="weather_data" class="alert alert-info" style="margin-left:72%">
         <!-- add background image -->
-         <img src="images/weather_logo.png" alt="weather logo" style="position:absolute; width:5%; margin-top:10%;">
+         <img src="images/weather_logo.png" alt="weather logo" style="width:25%; margin-top:10%;">
         <h2 class="alert alert-info">Latest Weather Information: </h2>
         <br>
+        <!-- Weather API with JS -->
+        <script src="weather_api.js"></script>
     </div>
     
     
     
-    <!-- Weather API with JS -->
-    <script src="weather_api.js"></script>
     
     
     <!-- Include footer -->
