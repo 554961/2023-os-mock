@@ -1,6 +1,6 @@
 <?php
 require_once "config.php";
-1
+
 $sql = "CREATE TABLE Staff (
     staffID INT AUTO_INCREMENT PRIMARY KEY,
     staffFirstName varchar(255),
