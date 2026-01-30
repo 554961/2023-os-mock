@@ -15,7 +15,7 @@ fetch(url)
     const temps = data.hourly.temperature_2m;
     
     // display YYYY-MM-DD
-    document.getElementById("weather_data").innerHTML += `<h2 style="text-decoration: underline;"><em>Date: ${times[0].substring(0,10)} </em></h2><br>`;
+    document.getElementById("weather_data").innerHTML += `<h3 style="text-decoration: underline;"><em>Date: ${times[0].substring(0,10)} </em></h3><br>`;
     for (let i = 0; i < 24; i++) {
         // display exact hours
         document.getElementById("weather_data").innerHTML += `<p><strong>${times[i].substring(11)}</strong> : ${temps[i]} °C <br></p>`;
