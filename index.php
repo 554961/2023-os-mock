@@ -1,5 +1,8 @@
 <?php
 require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
+
+session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +12,9 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <!-- my custom css -->
-     <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/home.css">
+        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 </head>
 <body>

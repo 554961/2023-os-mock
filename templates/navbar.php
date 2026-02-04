@@ -27,8 +27,17 @@
       <li><a href="/2023-os-mock/customer/personalised-health-advice">Personalised Health Advice</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="/2023-os-mock/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-      <li><a href="/2023-os-mock/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <?php
+        if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
+          {
+            echo '<li><a href="/2023-os-mock/customer"><span class="glyphicon glyphicon-plus"></span> Your Account</a></li>';
+          }
+        else
+          {
+            echo '<li><a href="/2023-os-mock/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>';
+            echo '<li><a href="/2023-os-mock/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+          }
+      ?>
     </ul>
   </div>
 </nav>

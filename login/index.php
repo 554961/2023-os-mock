@@ -1,4 +1,7 @@
 <?php
+require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
+
+session_start();
 
 ?>
 
@@ -46,6 +49,7 @@
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/navbar.php" ?>
     
     <div class="register-all">
+      <form method="POST">
         <div class="card register-card p-4">
         <h3 class="text-center fw-bold mb-1"> Login to your account</h3>
 
@@ -58,7 +62,7 @@
               <label class="form-label"> Password</label>
               <input type="password" class="form-control" placeholder="Create a password" name="password">
           </div>
-
+          
           <button type="submit" class="btn btn-green text-white w-100 py-2 fw-semibold">
               Login
           </button>
@@ -66,9 +70,38 @@
           <p class="text-center mt-3 mb-0 text-muted">
               Don't have an account? <a href="../register" class="text-success fw-semibold text-decoration-none">Register</a>
           </p>
-          </form>
-        </div>
+          <?php
+          if ($_SERVER["REQUEST_METHOD"] == "POST")
+          {
+            $email = mysqli_real_escape_string($conn, $_POST["email"]);
+            $password = mysqli_real_escape_string($conn, $_POST["password"]);
+
+            $sql = "SELECT customerPassword FROM customer WHERE customerEmail = ?";
+
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt,"s", $email);
+            if (!mysqli_stmt_execute($stmt))
+            {
+              echo "Failed executing prepared statement";
+            }  
+
+              $result = mysqli_stmt_get_result($stmt);
+              while ($row = mysqli_fetch_assoc($result))
+              {
+                if (password_verify($password, $row["customerPassword"]))
+                {
+                  echo "Succesfully logged in as user " . $email;
+                  $_SESSION["loggedIn"] = true;
+                  $_SESSION["email"]    = $email;
+                  header("Location: ../");
+                } 
+              }
+              echo "<br><p class='alert alert-danger'>Invalid email or password. Please try again.</p> <br>";
+          }
+          ?>
+      </form>
     </div>
+    
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
