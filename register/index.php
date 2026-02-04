@@ -173,7 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
           } 
           
           if (isset($allErrors) && count($allErrors) > 0)
-            echo "<p class='alert alert-danger'>ERRORS:<br><br>";
+            echo "<p class='alert alert-danger'>ERROR(S):<br><br>";
             {
               foreach ($allErrors as $error)
                 {
