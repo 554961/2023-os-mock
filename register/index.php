@@ -1,6 +1,7 @@
 <?php
 require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
+
 // this will store all errors that user might encounter
 $allErrors = [];
 
@@ -72,6 +73,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       mysqli_stmt_bind_param($stmt, "ssssi", $email, $password, $fname, $lname, $age);
       mysqli_stmt_execute($stmt);
     
+    }
+
+    if (isset($successful) && $successful) 
+    {
+      header("Location: ../login/");
     }
 
 }
@@ -169,7 +175,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
           <script>
               document.getElementById("status").textContent = "Successfully Registered!";
           </script> 
-          <?php 
+          <?php
           } 
           
           if (isset($allErrors) && count($allErrors) > 0)

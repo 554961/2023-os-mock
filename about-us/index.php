@@ -33,19 +33,19 @@
 
     <div class="row">
         <div class="col-md-4">
-            <h4>Our Mission</h4>
+            <h4><strong>Our Mission</strong></h4>
             <p>
                 To provide information to anyone in need.
             </p>
         </div>
         <div class="col-md-4">
-            <h4>Our Vision</h4>
+            <h4><strong>Our Vision</strong></h4>
             <p>
                 To become trusted in our industry through support and integrity.
             </p>
         </div>
         <div class="col-md-4">
-            <h4>Our Values</h4>
+            <h4><strong>Our Values</strong></h4>
             <p>
                 Customer first and never giving up.
             </p>

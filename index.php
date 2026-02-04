@@ -25,7 +25,7 @@ session_start();
     
     
     
-    <div id="weather_data" class="alert alert-info" style="margin-left:72%">
+    <div id="weather_data" class="alert alert-info" style="margin-left:74%">
         <!-- add background image -->
          <img src="images/weather_logo.png" alt="weather logo" style="width:25%; margin-top:10%;">
         <h2 class="alert alert-info">Latest Weather Information: </h2>
