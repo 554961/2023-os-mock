@@ -9,7 +9,6 @@
 
     footer
     {
-        margin-top:10%;
         position:relative;
         width:100%;
         display:block;

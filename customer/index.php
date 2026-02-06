@@ -17,7 +17,8 @@
     
     
     
-    
+    <!-- include the chatbot -->
+     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/chatbot.php" ?>
     
     
     <!-- include footer -->
