@@ -9,8 +9,10 @@
 
     footer
     {
+        margin-top:10%;
         position:relative;
         width:100%;
+        display:block;
         left: 0;
         bottom: 0;
         text-align:center;
@@ -63,7 +65,7 @@
             <p><strong>About</strong></p>
             <ul>
                 <li><a href="/2023-os-mock/about-us">About Us</a></li>
-                <li>Our Team</li>
+                <li><a href="/2023-os-mock/meet-the-team">Our Team</a></li>
             </ul>
             
         </div>

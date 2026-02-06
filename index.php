@@ -21,8 +21,11 @@ session_start();
     <!-- Include navbar -->
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/navbar.php" ?>
     
-    
-    
+
+    <!-- Hero -->
+    <div style="display:block; text-align:center">
+        <h1 class="alert alert-info">Welcome to the <strong>Health Advice Group</strong></h1>
+    </div>
     
     
     <div id="weather_data" class="alert alert-info" style="margin-left:74%">
