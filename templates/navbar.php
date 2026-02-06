@@ -30,7 +30,7 @@
       <?php
         if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
           {
-            echo '<li><a href="/2023-os-mock/customer"><span class="glyphicon glyphicon-plus"></span> Your Account</a></li>';
+            echo '<li><a href="/2023-os-mock/customer"><span class="glyphicon glyphicon-plus"></span> Your Account <strong style=color:lightgreen;>' . $_SESSION["email"] . '</strong></a></li>';
           }
         else
           {
