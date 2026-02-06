@@ -7,23 +7,14 @@
     background-clip: text; /* for newer browsers */
     }
 
-    .payments
-    {
-        width:25%;
-        display:block;
-        margin:auto;
-        padding-top:10px;
-        /* border-radius: 2%;  currently looks clapped*/ 
-    }
-
     footer
     {
-        /* position:fixed; */
+        position:relative;
         width:100%;
         left: 0;
         bottom: 0;
         text-align:center;
-        
+        background-color:white; 
     }
 
     .footer-links
@@ -57,7 +48,7 @@
 
 
 
-<footer style="background-color:white; left:0; bottom:0; position:fixed; width:100%;">
+<footer>
 
     <div class="footer-links">
         <div>

@@ -3,9 +3,14 @@ require_once "config.php";
 
 $sql = "CREATE TABLE Booking (
     bookingID INT AUTO_INCREMENT PRIMARY KEY,
-    
+    bookingDescription varchar(255),
+    customerID INT,
+    CONSTRAINT FK_booking_customerID FOREIGN KEY (customerID) 
+            REFERENCES customer(customerID)         
+            ON DELETE CASCADE
+            ON UPDATE CASCADE
 )";
 
-if (mysqli_query($conn, $sql)) {echo "Succesfully created staff table";}
+if (mysqli_query($conn, $sql)) {echo "Succesfully created booking table";}
 
 ?>
