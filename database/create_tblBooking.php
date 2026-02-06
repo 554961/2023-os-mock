@@ -4,6 +4,7 @@ require_once "config.php";
 $sql = "CREATE TABLE Booking (
     bookingID INT AUTO_INCREMENT PRIMARY KEY,
     bookingDescription varchar(255),
+    bookingDate DATE,
     customerID INT,
     CONSTRAINT FK_booking_customerID FOREIGN KEY (customerID) 
             REFERENCES customer(customerID)         
