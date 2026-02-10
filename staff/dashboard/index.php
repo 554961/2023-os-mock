@@ -6,7 +6,7 @@ session_start();
 
 if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
 {
-
+    
 }
 else
 {

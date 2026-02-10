@@ -21,7 +21,17 @@
         <p style="background-image: url('/2023-os-mock/images/margaret.jpg'); z-index:-1; display:block; margin:auto; "></p>
     </div>
 
-    <h3 style="margin-left:45%; text-decoration:underline">We are here to help.</h3>
+    <div style="position:absolute; margin-left:42%; margin-top:10%">
+        <h3 style="margin-left:8%; text-decoration:underline">We are here to help.</h3>
+        <hr>
+        <ul style="text-align:center">
+            <li><a style="color:purple" href="customer/dashboard/">Your Dashboard</a></li>
+            <li><a style="color:purple" href="customer/book-risk-assessment/">Book A Risk Assessment</a></li>
+            <li><a style="color:purple" href="customer/personalised-health-advice/">Your Personalised Health Advice</a></li>
+            <li><a style="color:purple" href="customer/personalised-health-tracking-tool/">Your Personalised Health Tracking Tool</a></li>
+        </ul>
+    </div>
+    
     
     <!-- Weather API -->
     <div id="weather_data" class="alert alert-info" style="margin-left:74%;">

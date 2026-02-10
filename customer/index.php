@@ -27,8 +27,7 @@ if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
         <li><a style="color:purple" href="book-risk-assessment/">Book A Risk Assessment</a></li>
         <li><a style="color:purple" href="personalised-health-advice/">Your Personalised Health Advice</a></li>
         <li><a style="color:purple" href="personalised-health-tracking-tool/">Your Personalised Health Tracking Tool</a></li>
-        <h4><a style="color:green" href="../../logout">Logout?</a></h4>
-
+        <h4><a style="color:green" href="../logout">Logout?</a></h4>
     </ul>
 
     <br><br>

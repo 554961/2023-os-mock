@@ -7,6 +7,14 @@ if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
     {
         header("location:../../index.php?error=customerOnly");
     }
+if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
+    {
+        
+    }
+else
+    {
+        header("location:../../login/index.php?error=notLoggedIn");
+    }
 ?>
 
 <!DOCTYPE html>
