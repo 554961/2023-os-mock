@@ -2,6 +2,11 @@
 require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
 session_start();
+
+if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
+    {
+        header("location:../../index.php?error=customerOnly");
+    }
 ?>
 
 <!DOCTYPE html>

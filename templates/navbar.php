@@ -2,6 +2,7 @@
 require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
 if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+
 ?>
 
 <!-- favicon -->
@@ -36,7 +37,15 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
       <?php
         if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
           {
-            echo '<li><a href="/2023-os-mock/customer"><span class="glyphicon glyphicon-plus"></span> Your Account <strong style=color:lightgreen;>' . $_SESSION["email"] . '</strong></a></li>';
+            if (isset($_SESSION["isStaff"]) && !$_SESSION["isStaff"])
+              {
+                echo '<li><a href="/2023-os-mock/customer"><span class="glyphicon glyphicon-plus"></span> Your Account <strong style=color:lightgreen;>' . $_SESSION["email"] . '</strong></a></li>';
+              }
+            else if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
+ 
+              {
+                echo '<li><a href="/2023-os-mock/staff"><span class="glyphicon glyphicon-plus"></span style="color:red"> STAFF MEMBER: <strong style=color:red;>' . $_SESSION["email"] . '</strong></a></li>';
+              }
           }
         else
           {

@@ -28,6 +28,7 @@ else
                         if (password_verify($password, $row["customerPassword"])) {
                             $valid = true;
                             $_SESSION["loggedIn"] = true;
+                            $_SESSION["isStaff"] = false;
                             $_SESSION["email"] = $email;
                             header("Location: ../index.php");
                         }

@@ -3,6 +3,12 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
 session_start();
 
+if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
+    {
+        header("location:../../index.php?error=customerOnly");
+    }
+
+
 if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -16,8 +22,6 @@ if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
             
             $id = mysqli_fetch_array($result)["customerID"];
             
-
-            // TODO: FIX;
             $sql = "INSERT INTO booking (bookingDescription, bookingDate, customerID)
                     VALUES ('$description', '$date', '$id')";
 

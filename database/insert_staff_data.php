@@ -21,6 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         echo "Successfully added staff member " . $firstName . " " . $lastName;
     }
+    else
+    {
+        echo "Failed to create staff member." . mysqli_stmt_error($stmt);
+    }
 
 }
 
