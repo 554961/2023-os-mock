@@ -1,3 +1,9 @@
+<?php
+require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
+
+if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+?>
+
 <!-- favicon -->
 <link rel="icon" href="/2023-os-mock/images/favicon.png" type="image/png">
 

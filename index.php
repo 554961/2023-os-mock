@@ -1,7 +1,4 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
-
-session_start();
 
 ?>
 
@@ -25,10 +22,11 @@ session_start();
     <!-- Hero -->
     <div style="display:block; text-align:center">
         <h1 class="alert alert-info">Welcome to the <strong>Health Advice Group</strong></h1>
+        <p style="background-image: url('/2023-os-mock/images/margaret.jpg'); z-index:-1; display:block; margin:auto; "></p>
     </div>
     
     
-    <div id="weather_data" class="alert alert-info" style="margin-left:74%">
+    <div id="weather_data" class="alert alert-info" style="margin-left:74%;">
         <!-- add background image -->
          <img src="images/weather_logo.png" alt="weather logo" style="width:25%; margin-top:10%;">
         <h2 class="alert alert-info">Latest Weather Information: </h2>

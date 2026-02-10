@@ -1,5 +1,7 @@
 <?php
+require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
+session_start();
 ?>
 
 <!DOCTYPE html>
