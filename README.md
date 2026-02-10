@@ -1,6 +1,6 @@
-occupational specialism 2023 mock exam
+*Occupational Specialism 2023 Mock Exam*
 
-How To Run (Make sure XAMPP is open and running Apache && MySQL!):
+**How To Run (Make sure XAMPP is open and running Apache && MySQL!):**
 - Go to /database and run in order:
     - create_db.php
     - create_tblCustomer.php
