@@ -3,7 +3,10 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
 if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
     {
-        header("location:../login/index.php?error=notLoggedIn");
+    }
+else
+    {
+        header("location:../../login/index.php?error=notLoggedIn");
     }
 ?>
 
