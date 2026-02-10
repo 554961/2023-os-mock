@@ -18,7 +18,7 @@ if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
             
 
             // TODO: FIX;
-            $sql = "INSERT INTO booking ('bookingDescription', 'bookingDate', 'customerID')
+            $sql = "INSERT INTO booking (bookingDescription, bookingDate, customerID)
                     VALUES ('$description', '$date', '$id')";
 
             if ($result = mysqli_query($conn, $sql)) 
