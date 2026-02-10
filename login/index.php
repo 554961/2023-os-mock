@@ -2,6 +2,43 @@
 require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
 session_start();
+
+if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
+    {
+        header("Location: ../index.php");
+    }
+else
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") 
+            {
+                $email = mysqli_real_escape_string($conn, $_POST["email"]);
+                $password = mysqli_real_escape_string($conn, $_POST["password"]);
+
+                $sql = "SELECT customerPassword FROM customer WHERE customerEmail = ?";
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt, "s", $email);
+
+                if (!mysqli_stmt_execute($stmt)) {
+                    echo "<p class='alert alert-danger mt-3'>Failed executing prepared statement.</p>";
+                } else {
+                    $result = mysqli_stmt_get_result($stmt);
+                    $valid = false;
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        if (password_verify($password, $row["customerPassword"])) {
+                            $valid = true;
+                            $_SESSION["loggedIn"] = true;
+                            $_SESSION["email"] = $email;
+                            header("Location: ../index.php");
+                        }
+                    }
+
+                    if (!$valid) {
+                        echo "<p class='alert alert-danger mt-3'>Invalid email or password. Please try again.</p>";
+                    }
+                }
+            }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -93,38 +130,6 @@ session_start();
                         Don't have an account?
                         <a href="../register" class="text-success fw-semibold text-decoration-none">Register</a>
                     </p>
-
-                    <?php
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        $email = mysqli_real_escape_string($conn, $_POST["email"]);
-                        $password = mysqli_real_escape_string($conn, $_POST["password"]);
-
-                        $sql = "SELECT customerPassword FROM customer WHERE customerEmail = ?";
-                        $stmt = mysqli_prepare($conn, $sql);
-                        mysqli_stmt_bind_param($stmt, "s", $email);
-
-                        if (!mysqli_stmt_execute($stmt)) {
-                            echo "<p class='alert alert-danger mt-3'>Failed executing prepared statement.</p>";
-                        } else {
-                            $result = mysqli_stmt_get_result($stmt);
-                            $valid = false;
-
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                if (password_verify($password, $row["customerPassword"])) {
-                                    $valid = true;
-                                    $_SESSION["loggedIn"] = true;
-                                    $_SESSION["email"] = $email;
-                                    header("Location: ../");
-                                    exit;
-                                }
-                            }
-
-                            if (!$valid) {
-                                echo "<p class='alert alert-danger mt-3'>Invalid email or password. Please try again.</p>";
-                            }
-                        }
-                    }
-                    ?>
                 </div>
             </form>
         </div>

@@ -1,8 +1,34 @@
 <?php
 require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
+session_start();
+
 if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
     {
+        if ($_SERVER["REQUEST_METHOD"] == "POST")
+        {
+            $description = $_POST["desc"];
+            $date = $_POST["date"];
+
+            $sql = "SELECT customerID FROM customer WHERE '" . $_SESSION["email"] . "' = customerEmail";
+    
+            $result = mysqli_query($conn, $sql);
+            
+            $id = mysqli_fetch_array($result)["customerID"];
+            
+
+            // TODO: FIX;
+            $sql = "INSERT INTO booking ('bookingDescription', 'bookingDate', 'customerID')
+                    VALUES ('$description', '$date', '$id')";
+
+            if ($result = mysqli_query($conn, $sql)) 
+                {
+                    echo "Successfully created booking.";
+                }
+
+
+        }
+
     }
 else
     {
