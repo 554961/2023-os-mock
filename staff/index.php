@@ -3,6 +3,18 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
 session_start();
 
+
+
+
+if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
+    {
+        echo "logged in alread";
+        header("location:/2023-os-mock/staff/dashboard");
+    }
+    
+
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
         $email = mysqli_real_escape_string($conn, $_POST["email"]);

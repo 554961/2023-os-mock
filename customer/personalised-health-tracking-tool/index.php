@@ -23,7 +23,9 @@ if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
     
     
     
-    
+        <main>
+        
+    </main>
     
     
     

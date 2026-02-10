@@ -22,7 +22,9 @@ if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/navbar.php" ?>
     
     
-    
+        <main>
+        
+    </main>
     
     
     

@@ -1,14 +1,25 @@
 <style>
-html, body {
-  height: 100%;
-  margin: 0;
-}
 
 body {
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
+  min-height: 100vh;
+  flex: 1; /* pushes footer to bottom when content is short */
+
 }
+/* --- Page layout for sticky footer --- */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    
+}
+
 
 /* Main content area */
 main {
@@ -28,6 +39,7 @@ footer {
   width: 100%;
   text-align: center;
   background-color: white;
+  
 }
 
 /* Footer layout */
