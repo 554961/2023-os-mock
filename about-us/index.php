@@ -20,12 +20,11 @@
             </p>
             <p>
                 Founded in 2026, Health Advice Group focuses on innovation, reliability, and customer
-                satisfaction. Our mission is to deliver products and services that people love
-                to use every day.
+                satisfaction. Our mission is to provide medical services that make you, not only feel, but actually become physically better.
             </p>
         </div>
         <div class="col-md-6 text-center">
-            <img src="/2023-os-mock/images/helper1.jpg" class="img-fluid rounded" style="width: 100%;" alt="About us image">
+            <img src="/2023-os-mock/images/margaret.jpg" class="img-fluid rounded" style="width: 100%;" alt="About us image">
         </div>
     </div>
 
