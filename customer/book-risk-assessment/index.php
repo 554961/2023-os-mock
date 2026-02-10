@@ -80,9 +80,11 @@ else
   </style>
 </head>
 <body>
+
     <!-- include navbar -->
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/navbar.php" ?>
     
+    <main>
     <div class="register-all" style="">
         <div class="card register-card p-4">
         <h3 class="text-center fw-bold mb-1"> Book Risk Assessment</h3>
@@ -99,12 +101,13 @@ else
           <button type="submit" class="btn btn-green text-white w-100 py-2 fw-semibold">
               Book
           </button>
+          <br><br>
         </form>
 
         </div>
     </div>
 
-
+    </main>
     
     
     <!-- include footer -->

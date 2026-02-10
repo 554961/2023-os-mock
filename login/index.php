@@ -14,7 +14,7 @@ else
                 $email = mysqli_real_escape_string($conn, $_POST["email"]);
                 $password = mysqli_real_escape_string($conn, $_POST["password"]);
 
-                $sql = "SELECT customerPassword FROM customer WHERE customerEmail = ?";
+                $sql = "SELECT customerPassword, customerID FROM customer WHERE customerEmail = ?";
                 $stmt = mysqli_prepare($conn, $sql);
                 mysqli_stmt_bind_param($stmt, "s", $email);
 
@@ -30,6 +30,7 @@ else
                             $_SESSION["loggedIn"] = true;
                             $_SESSION["isStaff"] = false;
                             $_SESSION["email"] = $email;
+                            $_SESSION["customerID"] = $row["customerID"];
                             header("Location: ../index.php");
                         }
                     }
