@@ -15,8 +15,13 @@
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/navbar.php" ?>
     
     
-        <main>
-        
+    <main style="text-align: center;">
+        <h2 class="alert alert-info">Information and Advice for how to deal with:</h2>
+        <ul>
+            <li><a style="color:purple" href="asthma/">Asthma</a></li>
+            <li><a style="color:purple" href="extreme-temps/">Extreme Temperatures</a></li>
+            <li><a style="color:purple" href="hay-fever/">Hay Fever</a></li>
+        </ul>
     </main>
     
     
