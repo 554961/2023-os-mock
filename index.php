@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,15 +20,29 @@
         <h1 class="alert alert-info">Welcome to the <strong>Health Advice Group</strong></h1>
         <p style="background-image: url('/2023-os-mock/images/margaret.jpg'); z-index:-1; display:block; margin:auto; "></p>
     </div>
+
+    <h3 style="margin-left:45%; text-decoration:underline">We are here to help.</h3>
     
-    
+    <!-- Weather API -->
     <div id="weather_data" class="alert alert-info" style="margin-left:74%;">
         <!-- add background image -->
          <img src="images/weather_logo.png" alt="weather logo" style="width:25%; margin-top:10%;">
-        <h2 class="alert alert-info">Latest Weather Information: </h2>
+        <h2 class="alert alert-info">Latest Weather Data: </h2>
         <br>
         <!-- Weather API with JS -->
         <script src="weather_api.js"></script>
+    </div>
+
+
+
+    <!-- Air Quality API -->
+    <div id="air_quality_data" class="alert alert-info" style="margin-left:1%; position:absolute; margin-top:10%">
+        <!-- add background image -->
+         <img src="images/air_quality.png" alt="weather logo" style="width:25%; margin-top:10%;">
+        <h2 class="alert alert-info"> Latest Air Quality Data: </h2>
+        <br>
+        <!-- Weather API with JS -->
+        <script src="air_quality_api.js"></script>
     </div>
     
     

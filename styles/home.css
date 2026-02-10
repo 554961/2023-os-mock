@@ -1,3 +1,18 @@
+#air_quality_data
+{
+        width:25%;
+    /* height:5%; */
+    margin-left:75%;
+    /* display:block; */
+    text-align: center;
+    background-color: lightcyan;
+}
+
+#air_quality_data p
+{
+    text-align: left;
+
+}
 
 
 #weather_data
