@@ -11,6 +11,7 @@
 <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/navbar.php" ?>
 
 
+<!-- About content -->
 <div class="container my-5">
     <div class="row align-items-center">
         <div class="col-md-6">
@@ -52,7 +53,7 @@
     </div>
 </div>
 
-    
+    <main></main>
 <!-- include footer -->
 <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/footer.php" ?>
 

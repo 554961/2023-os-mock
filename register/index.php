@@ -165,7 +165,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
           </p>
           </form>
 
-          <p id="status" class='alert alert-success'></p>
+          <p id="status" class=''></p>
           
           
           <?php 
@@ -192,10 +192,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
         </div>
     </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-    
     
     
     <!-- include footer -->

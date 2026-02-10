@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //api url
   const url = "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=52.52&longitude=13.41&hourly=pm10,pm2_5";
 
   fetch(url)

@@ -5,10 +5,11 @@ session_start();
 
 
 
-
+// check if they are staff members or not
+// if they are staff members, then put them to the dashboard
+// 
 if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
     {
-        echo "logged in alread";
         header("location:/2023-os-mock/staff/dashboard");
     }
     

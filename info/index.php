@@ -1,6 +1,4 @@
-<?php
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +12,7 @@
     <!-- include navbar -->
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/navbar.php" ?>
     
-    
+    <!-- provide quick links -->
     <main style="text-align: center;">
         <h2 class="alert alert-info">Information and Advice for how to deal with:</h2>
         <ul>

@@ -3,6 +3,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
 session_start();
 
+//check if the user is a staff member. if they are, then send them back
+//because staff members cant be on this page
 if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
     {
         header("location:../../index.php?error=customerOnly");
@@ -21,6 +23,7 @@ if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
     <!-- include navbar -->
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/navbar.php" ?>
     
+    <!-- show quick access links to the user -->
     <h1 style="text-align:center">Quick Links</h1>:
     <ul style="text-align:center">
         <li><a style="color:purple" href="dashboard/">Your Dashboard</a></li>

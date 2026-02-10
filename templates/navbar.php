@@ -41,6 +41,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
               {
                 echo '<li><a href="/2023-os-mock/customer"><span class="glyphicon glyphicon-plus"></span> Your Account <strong style=color:lightgreen;>' . $_SESSION["email"] . '</strong></a></li>';
               }
+              // if they are staff then display a different nav menu
             else if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
  
               {

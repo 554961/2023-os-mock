@@ -3,7 +3,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
 session_start();
 
-
+// check if they arent staff member
 if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
 {
     

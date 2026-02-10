@@ -1,5 +1,6 @@
 <?php
 require_once "config.php";
+// create sql query and check for errors
 
 $sql = "CREATE TABLE Customer (
     customerID INT AUTO_INCREMENT PRIMARY KEY,

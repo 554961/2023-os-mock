@@ -1,5 +1,6 @@
 <?php
 
+// create the database and check for errors
 $conn = mysqli_connect("localhost", "root", "");
 if ($conn === false) die("ERROR: Could not connect to database.". mysqli_connect_error());
 

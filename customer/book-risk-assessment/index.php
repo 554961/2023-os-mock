@@ -3,12 +3,14 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
 session_start();
 
+//check if the user is a staff member. if they are, then send them back
+//because staff members cant be on this page
 if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
     {
         header("location:../../index.php?error=customerOnly");
     }
 
-
+// if the customer is logged in, then they can access the page and start processing 
 if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -34,6 +36,7 @@ if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
         }
 
     }
+// if they are not logged in, send them back to get logged in
 else
     {
         header("location:../../login/index.php?error=notLoggedIn");
@@ -84,6 +87,7 @@ else
     <!-- include navbar -->
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/navbar.php" ?>
     
+    <!-- form for booking risk assessment -->
     <main>
     <div class="register-all" style="">
         <div class="card register-card p-4">

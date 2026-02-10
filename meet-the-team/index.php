@@ -20,6 +20,7 @@
 
 <h1 class="alert alert-success" style="text-align: center;"> Meet The Team </h1>
 
+<!-- main content of staff team -->
 <div class="container my-5">
     <div class="row align-items-center">
             <div class="col-md-6 text-center">
@@ -56,6 +57,7 @@
 </div>
 <hr>
 
+<!-- get the chatbot  -->
 <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/chatbot.php" ?>
     
 <!-- include footer -->

@@ -3,11 +3,15 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
 session_start();
 
+
+//check if the user is a staff member. if they are, then send them back
+//because staff members cant be on this page
 if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
     {
         header("location:../../index.php?error=customerOnly");
     }
 
+// if the customer is logged in, then they can access the page and start processing 
 
 if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
     {
@@ -30,6 +34,8 @@ else
 <body>
     <!-- include navbar -->
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/navbar.php" ?>
+    
+    <!-- present to the user their personal bookings -->
     <main>
         <h1 class="alert alert-info">Your Bookings</h1>
         <table class="table">
@@ -59,6 +65,7 @@ else
             ?>
         </table>
 
+        <!-- a button to logout -->
         <h2><a style="color:green" href="../../logout">Logout?</a></h2>
 
     </main>

@@ -1,5 +1,6 @@
 <?php
 require_once "config.php";
+// create sql query and check for errors
 
 $sql = "CREATE TABLE Staff (
     staffID INT AUTO_INCREMENT PRIMARY KEY,

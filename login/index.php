@@ -3,14 +3,18 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
 session_start();
 
+
+// check if they are already logged in, if they are then send them away.
 if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
     {
         header("Location: ../index.php");
     }
+// if they are not logged in, then we can start processing the data
 else
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") 
             {
+                // use mysqli_real_escape_string in order to prevent SQL injections
                 $email = mysqli_real_escape_string($conn, $_POST["email"]);
                 $password = mysqli_real_escape_string($conn, $_POST["password"]);
 
@@ -108,6 +112,7 @@ else
     <!-- navbar -->
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/navbar.php"; ?>
 
+    <!-- login form -->
     <main>
         <div class="register-all">
             <form method="POST">

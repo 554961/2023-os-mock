@@ -1,3 +1,4 @@
+//api url
 const url = "https://api.open-meteo.com/v1/forecast?latitude=50.8557&longitude=0.5801&hourly=temperature_2m";
 
 fetch(url)
