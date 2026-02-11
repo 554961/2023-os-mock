@@ -101,5 +101,7 @@ p {
   <small>&copy; 2026 Health Advice Group. All rights reserved.</small>
 </footer>
 
+
+
 </body>
 </html>

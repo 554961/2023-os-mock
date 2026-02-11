@@ -19,7 +19,7 @@
         <h4>1. Acceptance of Terms</h4>
         <p>
             By accessing or using our services, you agree to be bound by these Terms of Service.
-            If you do not agree, please do not use our website or services.
+            If you do not agree, do not use our website or services.
         </p>
     </section>
 
@@ -63,6 +63,8 @@
         </p>
     </section>
 </div>
+
+<main></main>
 
 <!-- INCLUDE THE FOOTER TEMPLATE -->
 <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/footer.php"; ?>
