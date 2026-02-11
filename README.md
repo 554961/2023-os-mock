@@ -6,7 +6,6 @@
     - create_tblCustomer.php
     - create_tblStaff.php
     - create_tblBooking.php
+    - create_tblTicket.php
+    
 THEN, you may access my website to create an account and login with a customer or staff account (if made).
-
-TODO:
-- Fully complete test plan https://classroom.google.com/c/ODAxNzkxMDc4NTM3/a/ODE4ODY2MDc5Nzcx/details

@@ -3,7 +3,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/database/config.php";
 
 session_start();
 
-// check if they arent staff member
+// check if they are staff member
 if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
 {
     
@@ -92,6 +92,9 @@ else
         
         <h2><a style="color:green" href="../../logout">Logout?</a></h2>
     </main>
+    
+    <h2><a style="color:red" href="../../database/insert_staff_data.php">Add New Staff Member?</a></h2>
+    
     <!-- footer -->
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/footer.php"; ?>
 </body>

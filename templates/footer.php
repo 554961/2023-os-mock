@@ -76,8 +76,8 @@ p {
     <div>
       <p><strong>Support</strong></p>
       <ul>
-        <li>Contact Us</li>
-        <li>Privacy Policy</li>
+        <li><a href="/2023-os-mock/contact-us">Contact Us</a></li>
+        <li><a href="/2023-os-mock/privacy-policy">Privacy Policy</a></li>
         <li><a href="/2023-os-mock/TOS">Terms of Service</a></li>
       </ul>
     </div>

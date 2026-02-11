@@ -65,10 +65,41 @@ else
             ?>
         </table>
 
+    <!-- present to the user their tickets -->
+    <main>
+        <h1 class="alert alert-info">Your Tickets</h1>
+        <table class="table">
+            <tr>
+                <th>ticketID</th>
+                <th>ticketDescription</th>
+                <th>ticketDate</th>
+                <th>customerID</th>
+            </tr>
+            
+            <?php
+                $sql = "SELECT * FROM ticket WHERE customerID = " . $_SESSION["customerID"];
+                $result = mysqli_query($conn, $sql);
+                
+                while ($row = mysqli_fetch_assoc($result))
+                    {
+                        echo "<tr>";
+                        
+                        echo "<td>".$row["ticketID"]."</td>";
+                        echo "<td>".$row["ticketDescription"]."</td>";
+                        echo "<td>".$row["ticketDate"]."</td>";
+                        echo "<td>".$row["customerID"]."</td>";
+                        
+                        echo "</tr>";
+
+                    }
+            ?>
+        </table>
+
         <!-- a button to logout -->
         <h2><a style="color:green" href="../../logout">Logout?</a></h2>
 
     </main>
+    <br><br><br><br><br><br><br><br><br><br>
     <!-- include footer -->
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/footer.php" ?>
 </body>

@@ -3,10 +3,10 @@ require_once "config.php";
 
 session_start();
 
-
+// check if they are a staff member
 if (isset($_SESSION["isStaff"]) && $_SESSION["isStaff"])
 {
-    echo "welcome staff member";
+    // empty space for now as not needed
 }
 else
 {

@@ -25,6 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "s", $email);
 
+
+
+
+
+
         if (!mysqli_stmt_execute($stmt)) {
             echo "<p class='alert alert-danger mt-3'>Failed executing prepared statement.</p>";
         } else {
@@ -32,13 +37,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             $valid = false;
 
             while ($row = mysqli_fetch_assoc($result)) {
-                if (password_verify($password, $row["staffPassword"])) {
-                    $valid = true;
-                    $_SESSION["loggedIn"] = true;
-                    $_SESSION["isStaff"] = true;
-                    $_SESSION["email"] = $email;
-                    header("Location: ../index.php");
-                }
+                
+                //
+                // IMPORTANT: 
+                //
+                // checking the staff member's password is hashed
+                // we need this because when first creating the website, it creates a chicken and egg situation
+                // where in order to login you need a staff account, but in order to create a staff account you need a staff account.
+                // so this will prevent that by allowing the admin to directly go in phpmyadmin and insert manually a staff account 
+                // who's password can later be edited and hashed for security purposese.
+                // thanks for coming to my ted talk.
+
+                    if ($password == $row["staffPassword"])
+                    {
+                        $valid = true;
+                        $_SESSION["loggedIn"] = true;
+                        $_SESSION["isStaff"] = true;
+                        $_SESSION["email"] = $email;
+                        header("Location: ../index.php");
+                    }  
+
+                    
+                    if (password_verify($password, $row["staffPassword"])) {
+                        $valid = true;
+                        $_SESSION["loggedIn"] = true;
+                        $_SESSION["isStaff"] = true;
+                        $_SESSION["email"] = $email;
+                        header("Location: ../index.php");
+                    }
+                
+
+                
+ 
+                
             }
 
             if (!$valid) {
