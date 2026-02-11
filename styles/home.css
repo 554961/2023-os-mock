@@ -28,3 +28,20 @@
 {
     text-align: left;
 }
+
+.data-container {
+    display: flex;
+    justify-content: space-between;  /* left & right */
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.data-box {
+    width: 45%;        /* each takes nearly half screen */
+    padding: 20px;
+}
+
+.logo {
+    width: 25%;
+    margin-top: 10px;
+}
