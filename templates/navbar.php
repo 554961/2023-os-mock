@@ -31,7 +31,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
       <li><a href="/2023-os-mock/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
       <li><a href="/2023-os-mock/info/">Information</a></li>
       <li><a href="/2023-os-mock/customer/book-risk-assessment">Book Risk Assessment</a></li>
-      <li><a href="/2023-os-mock/customer/personalised-health-advice">Personalised Health Advice</a></li>
+      <li><a href="/2023-os-mock/customer/personalised-health-tracking-tool">Personalised Health Tracking Tool</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <?php
