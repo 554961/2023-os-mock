@@ -36,7 +36,6 @@ else
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/2023-os-mock/templates/navbar.php" ?>
     
     <!-- present to the user their personal bookings -->
-    <main>
         <h1 class="alert alert-info">Your Bookings</h1>
         <table class="table">
             <tr>
@@ -87,6 +86,48 @@ else
                         echo "<td>".$row["ticketID"]."</td>";
                         echo "<td>".$row["ticketDescription"]."</td>";
                         echo "<td>".$row["ticketDate"]."</td>";
+                        echo "<td>".$row["customerID"]."</td>";
+                        
+                        echo "</tr>";
+
+                    }
+            ?>
+        </table>
+
+    <!-- present to the user their health tracking tool -->
+
+        <h1 class="alert alert-info">Your Health Tracking Tool</h1>
+        <table class="table">
+            <tr>
+                <th>trackerID</th>
+                <th>trackerDate</th>
+                <th>trackerWeight</th>
+                <th>trackerTargetWeight</th>
+                <th>trackerBodyFatPercentage</th>
+                <th>trackerTargetFatPercentage</th>
+                <th>trackerPushupCount</th>
+                <th>trackerTargetPushupCount</th>
+                <th>trackerDiet</th>
+                <th>customerID</th>
+            </tr>
+            
+            <?php
+                $sql = "SELECT * FROM healthtracker WHERE customerID = " . $_SESSION["customerID"];
+                $result = mysqli_query($conn, $sql);
+                
+                while ($row = mysqli_fetch_assoc($result))
+                    {
+                        echo "<tr>";
+                        
+                        echo "<td>".$row["trackerID"]."</td>";
+                        echo "<td>".$row["trackerDate"]."</td>";
+                        echo "<td>".$row["trackerWeight"]."</td>";
+                        echo "<td>".$row["trackerTargetWeight"]."</td>";
+                        echo "<td>".$row["trackerBodyFatPercentage"]."</td>";
+                        echo "<td>".$row["trackerTargetFatPercentage"]."</td>";
+                        echo "<td>".$row["trackerPushupCount"]."</td>";
+                        echo "<td>".$row["trackerTargetPushupCount"]."</td>";
+                        echo "<td>".$row["trackerDiet"]."</td>";
                         echo "<td>".$row["customerID"]."</td>";
                         
                         echo "</tr>";
