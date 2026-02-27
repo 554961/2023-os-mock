@@ -50,7 +50,7 @@ if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true)
 // if they are not logged in, send them back to get logged in
 else
     {
-        header("location:../login/index.php?error=notLoggedIn");
+        header("location:../../login/index.php?error=notLoggedIn");
     }
 ?>
 
